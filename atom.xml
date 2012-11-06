@@ -4,7 +4,7 @@
   <title><![CDATA[Ronny López]]></title>
   <link href="http://blog.ronny.lt/atom.xml" rel="self"/>
   <link href="http://blog.ronny.lt/"/>
-  <updated>2012-11-06T13:47:31+01:00</updated>
+  <updated>2012-11-06T13:47:55+01:00</updated>
   <id>http://blog.ronny.lt/</id>
   <author>
     <name><![CDATA[Ronny López]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Managing web assets in Symfony2 with Bower]]></title>
-    <link href="http://blog.ronny.lt/2012/11/05/managing-symfony2-web-assets-with-bower/"/>
+    <link href="http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower/"/>
     <updated>2012-11-05T22:43:00+01:00</updated>
-    <id>http://blog.ronny.lt/2012/11/05/managing-symfony2-web-assets-with-bower</id>
+    <id>http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower</id>
     <content type="html"><![CDATA[<p>In a typical Symfony2 application, web assets are handled elegantly by taking advantage of the <code>asset</code> Twig function or by using another library, called <a href="https://github.com/kriswallsmith/assetic">Assetic</a>, which allows you to <a href="http://symfony.com/doc/current/cookbook/assetic/asset_management.html">do much more interesting things</a> with those assets.</p>
 
 <p>If you follow the bundles directory structure conventions, then you should put your web assets (images, scripts, stylesheets, etc) in the <code>Resources/public/</code> directory inside your bundle.</p>
