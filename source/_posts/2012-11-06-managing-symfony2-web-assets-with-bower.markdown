@@ -9,11 +9,13 @@ In a typical Symfony2 application, web assets are handled elegantly by taking ad
 
 If you follow the bundles directory structure conventions, then you should put your web assets (images, scripts, stylesheets, etc) in the `Resources/public/` directory inside your bundle.
 
-Although Assetic and the `asset` function will do the rest of the work for you (copying, linking, combining, filtering and dumping assets) you still have to manage your assets dependency by hand.
+Although Assetic and the `asset` function will do the rest of the work for you (copying, linking, combining, filtering and dumping assets) you still have to manage your assets dependencies by hand.
 
 [Composer](http://getcomposer.org/) become the core dependency manager for Symfony 2.1 and beyond. It is a dependency management library for PHP, it was created for handling PHP dependencies, but NOT for handling front-end (assets) dependencies.
 
-So, how do we manage the dependencies of our web assets. Having to manually download and keep updated all front-end dependencies is a very tedious task.
+So, how do we manage the dependencies of our web assets?
+
+Having to manually download and keep updated all front-end dependencies is a very tedious task.
 
 ## Bower to the rescue
 

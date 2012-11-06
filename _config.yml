@@ -4,10 +4,10 @@
 
 url: http://blog.ronny.lt
 title: Ronny López
-subtitle: Random thoughts on Symfony, Redis, Web Develpment and Life.
+subtitle: Random thoughts on Symfony, Redis, Web Development and Life.
 author: Ronny López
 simple_search: http://google.com/search
-description: Blog personal de Ronny López.
+description: Personal blog of Ronny López.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
