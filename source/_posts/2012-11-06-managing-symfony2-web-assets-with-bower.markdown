@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Managing Symfony2 web assets with Bower"
+title: "Managing web assets in Symfony2 with Bower"
 date: 2012-11-05 22:43
 comments: true
 categories:
