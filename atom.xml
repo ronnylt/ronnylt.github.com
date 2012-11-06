@@ -4,7 +4,7 @@
   <title><![CDATA[Ronny López]]></title>
   <link href="http://blog.ronny.lt/atom.xml" rel="self"/>
   <link href="http://blog.ronny.lt/"/>
-  <updated>2012-11-06T02:15:21+01:00</updated>
+  <updated>2012-11-06T02:21:45+01:00</updated>
   <id>http://blog.ronny.lt/</id>
   <author>
     <name><![CDATA[Ronny López]]></name>
@@ -115,8 +115,11 @@
 
 <h2>References</h2>
 
-<p><a href="http://twitter.github.com/bower/" title="The browser package manager">Bower</a>
-<a href="http://net.tutsplus.com/tutorials/tools-and-tips/meet-bower-a-package-manager-for-the-web/">Meet Bower: A Package Manager For The Web</a></p>
+<ul>
+<li><a href="http://twitter.github.com/bower/">Bower: The browser package manager</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/meet-bower-a-package-manager-for-the-web/">Meet Bower: A Package Manager For The Web</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
