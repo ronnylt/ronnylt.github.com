@@ -4,7 +4,7 @@
   <title><![CDATA[Ronny López]]></title>
   <link href="http://blog.ronny.lt/atom.xml" rel="self"/>
   <link href="http://blog.ronny.lt/"/>
-  <updated>2012-11-06T02:21:45+01:00</updated>
+  <updated>2012-11-06T02:31:15+01:00</updated>
   <id>http://blog.ronny.lt/</id>
   <author>
     <name><![CDATA[Ronny López]]></name>
@@ -28,7 +28,7 @@
 
 <p>So, how do we manage the dependencies of our web assets. Having to manually download and keep updated all front-end dependencies is a very tedious task.</p>
 
-<h2>Bower to rescue</h2>
+<h2>Bower to the rescue</h2>
 
 <p><a href="http://twitter.github.com/bower/">Bower</a> is a package manager for the web. Bower lets you easily install assets such as images, CSS and JavaScript, and manages dependencies for you.</p>
 
