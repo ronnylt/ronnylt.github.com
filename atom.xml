@@ -4,7 +4,7 @@
   <title><![CDATA[Ronny López]]></title>
   <link href="http://blog.ronny.lt/atom.xml" rel="self"/>
   <link href="http://blog.ronny.lt/"/>
-  <updated>2012-11-06T11:16:50+01:00</updated>
+  <updated>2012-11-06T13:40:23+01:00</updated>
   <id>http://blog.ronny.lt/</id>
   <author>
     <name><![CDATA[Ronny López]]></name>
@@ -22,11 +22,13 @@
 
 <p>If you follow the bundles directory structure conventions, then you should put your web assets (images, scripts, stylesheets, etc) in the <code>Resources/public/</code> directory inside your bundle.</p>
 
-<p>Although Assetic and the <code>asset</code> function will do the rest of the work for you (copying, linking, combining, filtering and dumping assets) you still have to manage your assets dependency by hand.</p>
+<p>Although Assetic and the <code>asset</code> function will do the rest of the work for you (copying, linking, combining, filtering and dumping assets) you still have to manage your assets dependencies by hand.</p>
 
 <p><a href="http://getcomposer.org/">Composer</a> become the core dependency manager for Symfony 2.1 and beyond. It is a dependency management library for PHP, it was created for handling PHP dependencies, but NOT for handling front-end (assets) dependencies.</p>
 
-<p>So, how do we manage the dependencies of our web assets. Having to manually download and keep updated all front-end dependencies is a very tedious task.</p>
+<p>So, how do we manage the dependencies of our web assets?</p>
+
+<p>Having to manually download and keep updated all front-end dependencies is a very tedious task.</p>
 
 <h2>Bower to the rescue</h2>
 
