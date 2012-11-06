@@ -1,16 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://ronnylt.github.com/atom.xml" rel="self"/>
-  <link href="http://ronnylt.github.com/"/>
-  <updated>2012-11-06T01:59:43+01:00</updated>
-  <id>http://ronnylt.github.com/</id>
+  <title><![CDATA[Ronny López]]></title>
+  <link href="http://blog.ronny.lt/atom.xml" rel="self"/>
+  <link href="http://blog.ronny.lt/"/>
+  <updated>2012-11-06T02:15:21+01:00</updated>
+  <id>http://blog.ronny.lt/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[Ronny López]]></name>
+    <email><![CDATA[hi@ronny.lt]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Managing Symfony2 web assets with Bower]]></title>
+    <link href="http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower/"/>
+    <updated>2012-11-05T22:43:00+01:00</updated>
+    <id>http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower</id>
+    <content type="html"><![CDATA[<p>In a typical Symfony2 application, web assets are handled elegantly by taking advantage of the <code>asset</code> Twig function or by using another library, called <a href="https://github.com/kriswallsmith/assetic">Assetic</a>, which allows you to <a href="http://symfony.com/doc/current/cookbook/assetic/asset_management.html">do much more interesting things</a> with those assets.</p>
+
+<p>If you follow the bundles directory structure conventions, then you should put your web assets (images, scripts, stylesheets, etc) in the <code>Resources/public/</code> directory inside your bundle.</p>
+
+<p>Although Assetic and the <code>asset</code> function will do the rest of the work for you (copying, linking, combining, filtering and dumping assets) you still have to manage your assets dependency by hand.</p>
+
+<p><a href="http://getcomposer.org/">Composer</a> become the core dependency manager for Symfony 2.1 and beyond. It is a dependency management library for PHP, it was created for handling PHP dependencies, but NOT for handling front-end (assets) dependencies.</p>
+
+<p>So, how do we manage the dependencies of our web assets. Having to manually download and keep updated all front-end dependencies is a very tedious task.</p>
+
+<h2>Bower to rescue</h2>
+
+<p><a href="http://twitter.github.com/bower/">Bower</a> is a package manager for the web. Bower lets you easily install assets such as images, CSS and JavaScript, and manages dependencies for you.</p>
+
+<p>Bower is <strong>just</strong> a package manager, and nothing else. It does not offer the ability to combine, concatenate or minify code, it’s sole purpose is to manage packages.</p>
+
+<h2>Using the Bower component.json file</h2>
+
+<p>Just as we have a <code>composer.json</code> file with our PHP dependencies, you can create a <code>component.json</code> file in your project&#8217;s root, specifying all front-end dependencies.</p>
+
+<figure class='code'><figcaption><span>Sample component.json file.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Acme Application&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>      <span class="s2">&quot;jquery&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.7.2&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="s2">&quot;bootstrap&quot;</span><span class="o">:</span> <span class="s2">&quot;latest&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="s2">&quot;undersocre&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.4.2&quot;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And similar to Composer, we do <code>bower install</code> or <code>bower update</code> once Bower get installed in your development environment.</p>
+
+<p>By default, Bower will install packages in the <code>components</code> directory, so we need to change its default configuration to follow Symfony2 conventions.</p>
+
+<h2>Configuring Bower for Symfony2 applications</h2>
+
+<p>Bower can be configured by creating a <code>.bowerrc</code> file in your project´s root with one or all of the following configuration parameters:</p>
+
+<figure class='code'><figcaption><span>.bowerrc configuration file</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="nt">&quot;directory&quot;</span> <span class="p">:</span> <span class="s2">&quot;src/Acme/DemoBundle/Resources/public&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nt">&quot;json&quot;</span>      <span class="p">:</span> <span class="s2">&quot;component.json&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nt">&quot;endpoint&quot;</span>  <span class="p">:</span> <span class="s2">&quot;https://bower.herokuapp.com&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With the above configuration, once you do <code>bower install</code> or <code>bower update</code>, the packages will be copied to the <code>src/Acme/DemoBundle/Resources/public</code> directory as specified in the <code>.bowerrc</code> file.</p>
+
+<h2>Using the packages installed by Bower</h2>
+
+<p>Remember, Bower is just a package manager, so there’s no Bower-specific way to use these packages. So, we’ll just stick with the Symfony2 way of linking to assets in the bundle <code>Resources/public</code> directory (using <code>asset</code> or Assetic).</p>
+
+<p>We just reference the assets as we have always do.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='html+jinja'><span class='line'><span class="cp">{%</span> <span class="k">stylesheets</span>
+</span><span class='line'>    <span class="s1">&#39;@AcmeDemoBundle/Resources/public/bootstrap/less/bootstrap.less&#39;</span>
+</span><span class='line'>    <span class="s1">&#39;@AcmeDemoBundle/Resources/public/bootstrap/less/responsive.less&#39;</span>
+</span><span class='line'><span class="cp">%}</span>
+</span><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">asset_url</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="cp">{%</span> <span class="k">endstylesheets</span> <span class="cp">%}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Conclusion and next steps</h2>
+
+<p>So, that´s all. Bower just will help us to manage our client-side/front-end dependencies in a Symfony2 application or inside our bundle.</p>
+
+<p>The next challenge would be to include Bower commands in our deploy process so that we can have packages automatically downloaded and installed during deploys.</p>
+
+<p>Dependencies management sucks, that´s a fact. We already have composer to manage PHP libraries and bundles dependencies. I am very happy to have an elegant client-side dependency manager as well!</p>
+
+<h2>References</h2>
+
+<p><a href="http://twitter.github.com/bower/" title="The browser package manager">Bower</a>
+<a href="http://net.tutsplus.com/tutorials/tools-and-tips/meet-bower-a-package-manager-for-the-web/">Meet Bower: A Package Manager For The Web</a></p>
+]]></content>
+  </entry>
   
 </feed>

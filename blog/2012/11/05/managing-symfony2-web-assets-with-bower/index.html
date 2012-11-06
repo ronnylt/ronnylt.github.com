@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ronny López</title>
+  <title>Managing Symfony2 web assets with Bower - Ronny López</title>
   <meta name="author" content="Ronny López">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.ronny.lt/">
+  <link rel="canonical" href="http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -72,15 +72,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/05/managing-symfony2-web-assets-with-bower/">Managing Symfony2 web assets with Bower</a></h1>
+      <h1 class="entry-title">Managing Symfony2 web assets with Bower</h1>
     
     
       <p class="meta">
@@ -98,14 +95,14 @@
 
 <time datetime="2012-11-05T22:43:00+01:00" pubdate data-updated="true">Nov 5<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/11/05/managing-symfony2-web-assets-with-bower/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>In a typical Symfony2 application, web assets are handled elegantly by taking advantage of the <code>asset</code> Twig function or by using another library, called <a href="https://github.com/kriswallsmith/assetic">Assetic</a>, which allows you to <a href="http://symfony.com/doc/current/cookbook/assetic/asset_management.html">do much more interesting things</a> with those assets.</p>
+<div class="entry-content"><p>In a typical Symfony2 application, web assets are handled elegantly by taking advantage of the <code>asset</code> Twig function or by using another library, called <a href="https://github.com/kriswallsmith/assetic">Assetic</a>, which allows you to <a href="http://symfony.com/doc/current/cookbook/assetic/asset_management.html">do much more interesting things</a> with those assets.</p>
 
 <p>If you follow the bundles directory structure conventions, then you should put your web assets (images, scripts, stylesheets, etc) in the <code>Resources/public/</code> directory inside your bundle.</p>
 
@@ -205,18 +202,59 @@
 <p><a href="http://twitter.github.com/bower/" title="The browser package manager">Bower</a>
 <a href="http://net.tutsplus.com/tutorials/tools-and-tips/meet-bower-a-package-manager-for-the-web/">Meet Bower: A Package Manager For The Web</a></p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Ronny López</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2012-11-05T22:43:00+01:00" pubdate data-updated="true">Nov 5<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower/" data-via="ronnylt" data-counturl="http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -234,7 +272,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -254,6 +292,7 @@
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -268,7 +307,10 @@
       var disqus_shortname = 'ronnylt';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower/';
+        var disqus_url = 'http://blog.ronny.lt/blog/2012/11/05/managing-symfony2-web-assets-with-bower/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
