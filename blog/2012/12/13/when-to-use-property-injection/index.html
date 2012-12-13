@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Ronny López</title>
+  <title>When to use Property Injection - Ronny López</title>
   <meta name="author" content="Ronny López">
 
   
-  <meta name="description" content="Blog Archive 2012 When to use Property Injection
-Dec 13 2012 Managing web assets in Symfony2 with Bower
-Nov 05 2012 Recent Posts When to use &hellip;">
+  <meta name="description" content="Short answer: Try to avoid it. There are several ways to inject dependencies when using the Symfony Dependency Injection Component (or any other DI &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Nov 05 2012 Recent Posts When to use &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.ronny.lt/blog/archives/">
+  <link rel="canonical" href="http://blog.ronny.lt/blog/2012/12/13/when-to-use-property-injection/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,42 +75,108 @@ Nov 05 2012 Recent Posts When to use &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">When to use Property Injection</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-13T13:35:00+01:00" pubdate data-updated="true">Dec 13<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Short answer: Try to avoid it.</p>
 
-  
-  <h2>2012</h2>
+<p>There are several ways to inject dependencies when using the Symfony <a href="https://github.com/symfony/DependencyInjection">Dependency Injection Component</a> (or any other DI component in general)</p>
 
-<article>
-  
-<h1><a href="/blog/2012/12/13/when-to-use-property-injection/">When to use Property Injection</a></h1>
-<time datetime="2012-12-13T13:35:00+01:00" pubdate><span class='month'>Dec</span> <span class='day'>13</span> <span class='year'>2012</span></time>
+<p>There are different ways of working and each type of injection has advantages and disadvantages to consider.</p>
 
+<p>However, with the Symfony Component, one of the the possibility is just setting the public properties of the class directly.</p>
 
-</article>
+<p>Although this method could be usefull in some situations, I consider Property Injection a <em>very bad practice</em> for the following reasons:</p>
 
-
-
-<article>
-  
-<h1><a href="/blog/2012/11/05/managing-symfony2-web-assets-with-bower/">Managing web assets in Symfony2 with Bower</a></h1>
-<time datetime="2012-11-05T22:43:00+01:00" pubdate><span class='month'>Nov</span> <span class='day'>05</span> <span class='year'>2012</span></time>
+<ul>
+<li><p>You can not use type hinting. Therefore, you can not have control of what type of variable is being injected except by explicitly checking yourself in the class code before using the injected property.</p></li>
+<li><p>You can not control if the dependency is set at all, or if it is changed at any point in the object&#8217;s lifetime.</p></li>
+<li><p>Public properties are mostly dangerous. Once you expose them, you lose any possibility of having control later. If you have gettes/setters right away you have room for adding control later.</p></li>
+</ul>
 
 
-</article>
+<p>It only may be may be useful when you are working with code that is out of your control, such as 3rd party libraries, legacy code, etc&#8230;, which uses public properties for its dependencies.</p>
 
+<p>Conclusion, it´s good to know that this posiblity exists in the Service Container, but try to avoid it. Use constructor or setter injection whenever you can. Keep it simple, keep it robust ;)</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Ronny López</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-13T13:35:00+01:00" pubdate data-updated="true">Dec 13<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ronny.lt/blog/2012/12/13/when-to-use-property-injection/" data-via="ronnylt" data-counturl="http://blog.ronny.lt/blog/2012/12/13/when-to-use-property-injection/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/05/managing-symfony2-web-assets-with-bower/" title="Previous Post: Managing web assets in Symfony2 with Bower">&laquo; Managing web assets in Symfony2 with Bower</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -172,7 +236,10 @@ Nov 05 2012 Recent Posts When to use &hellip;">
       var disqus_shortname = 'ronnylt';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.ronny.lt/blog/2012/12/13/when-to-use-property-injection/';
+        var disqus_url = 'http://blog.ronny.lt/blog/2012/12/13/when-to-use-property-injection/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

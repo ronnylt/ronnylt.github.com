@@ -4,7 +4,7 @@
   <title><![CDATA[Ronny López]]></title>
   <link href="http://blog.ronny.lt/atom.xml" rel="self"/>
   <link href="http://blog.ronny.lt/"/>
-  <updated>2012-12-13T13:32:51+01:00</updated>
+  <updated>2012-12-13T14:14:54+01:00</updated>
   <id>http://blog.ronny.lt/</id>
   <author>
     <name><![CDATA[Ronny López]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[When to use Property Injection]]></title>
+    <link href="http://blog.ronny.lt/blog/2012/12/13/when-to-use-property-injection/"/>
+    <updated>2012-12-13T13:35:00+01:00</updated>
+    <id>http://blog.ronny.lt/blog/2012/12/13/when-to-use-property-injection</id>
+    <content type="html"><![CDATA[<p>Short answer: Try to avoid it.</p>
+
+<p>There are several ways to inject dependencies when using the Symfony <a href="https://github.com/symfony/DependencyInjection">Dependency Injection Component</a> (or any other DI component in general)</p>
+
+<p>There are different ways of working and each type of injection has advantages and disadvantages to consider.</p>
+
+<p>However, with the Symfony Component, one of the the possibility is just setting the public properties of the class directly.</p>
+
+<p>Although this method could be usefull in some situations, I consider Property Injection a <em>very bad practice</em> for the following reasons:</p>
+
+<ul>
+<li><p>You can not use type hinting. Therefore, you can not have control of what type of variable is being injected except by explicitly checking yourself in the class code before using the injected property.</p></li>
+<li><p>You can not control if the dependency is set at all, or if it is changed at any point in the object&#8217;s lifetime.</p></li>
+<li><p>Public properties are mostly dangerous. Once you expose them, you lose any possibility of having control later. If you have gettes/setters right away you have room for adding control later.</p></li>
+</ul>
+
+
+<p>It only may be may be useful when you are working with code that is out of your control, such as 3rd party libraries, legacy code, etc&#8230;, which uses public properties for its dependencies.</p>
+
+<p>Conclusion, it´s good to know that this posiblity exists in the Service Container, but try to avoid it. Use constructor or setter injection whenever you can. Keep it simple, keep it robust ;)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Managing web assets in Symfony2 with Bower]]></title>
