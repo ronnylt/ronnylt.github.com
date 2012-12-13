@@ -40,7 +40,7 @@ Just as we have a `composer.json` file with our PHP dependencies, you can create
 }
 ```
 
-And similar to Composer, we do `bower install` or `bower update` once Bower get installed in your development environment.
+[Install Bower](https://github.com/twitter/bower#installing-bower) in your development environment, and the same way we do with Composer, do `bower install` or `bower update`.
 
 By default, Bower will install packages in the `components` directory, so we need to change its default configuration to follow Symfony2 conventions.
 
