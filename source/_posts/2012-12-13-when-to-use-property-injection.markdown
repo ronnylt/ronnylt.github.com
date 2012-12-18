@@ -11,7 +11,7 @@ There are several ways to inject dependencies when using the Symfony [Dependency
  
 There are different ways of working and each type of injection has advantages and disadvantages to consider.
 
-However, with the Symfony Component, one of the the possibility is just setting the public properties of the class directly.
+However, with the Symfony Component, one of the possibility is just setting the public properties of the class directly.
  
 Although this method could be usefull in some situations, I consider Property Injection a *very bad practice* for the following reasons:
 
