@@ -4,7 +4,7 @@
   <title><![CDATA[Ronny López]]></title>
   <link href="http://blog.ronny.lt/atom.xml" rel="self"/>
   <link href="http://blog.ronny.lt/"/>
-  <updated>2012-12-13T14:18:22+01:00</updated>
+  <updated>2012-12-18T22:52:09+01:00</updated>
   <id>http://blog.ronny.lt/</id>
   <author>
     <name><![CDATA[Ronny López]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Hight Performers]]></title>
+    <link href="http://blog.ronny.lt/blog/2012/12/18/the-hight-performers/"/>
+    <updated>2012-12-18T21:05:00+01:00</updated>
+    <id>http://blog.ronny.lt/blog/2012/12/18/the-hight-performers</id>
+    <content type="html"><![CDATA[<p>12 Habits of High Performers, by <a href="https://twitter.com/chrislema">Chirs Lema</a>.</p>
+
+<blockquote><p>They make <strong>decisions</strong> and take actions.</p>
+
+<p>They act <strong>even when</strong> they don´t feel like it.</p>
+
+<p>They do the most <strong>productive</strong> thing right away.</p>
+
+<p>They only do <strong>one thing</strong> at a time.</p>
+
+<p>They have a <strong>positive</strong> attitude.</p>
+
+<p>They have <strong>redefined</strong> failure.</p>
+
+<p>They don´t let <strong>fear</strong> hold then back.</p>
+
+<p>They are clear about their <strong>purpose</strong> in whatever context they&#8217;re in.</p>
+
+<p>They don´t get <strong>distracted</strong> by the little stuff.</p>
+
+<p>They value <strong>their time</strong> and have a plan for how to use it</p>
+
+<p>They are <strong>continually</strong> developing their communication skills.</p>
+
+<p>They have an <strong>open</strong> mind and are willing to learn</p></blockquote>
+
+<p>Totally agree with him. But is not enough to agree, you should be  able to apply it to your life with accountability, discipline and #rigor. Only this way will be habits, everything else is dust in the wind&#8230;</p>
+
+<script async class="speakerdeck-embed" data-id="50711dcdd28953000200e976" data-ratio="1.33333333333333" src="http://blog.ronny.lt//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>More on <a href="http://chrislema.com/a-done-done-culture-habit-one/">&#8220;A Done Done Culture&#8221; series</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[When to use Property Injection]]></title>
