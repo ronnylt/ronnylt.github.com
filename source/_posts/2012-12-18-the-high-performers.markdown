@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Hight Performers"
+title: "The High Performers"
 date: 2012-12-18 21:05
 comments: true
 categories: 
